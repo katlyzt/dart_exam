@@ -128,3 +128,119 @@ import 'dart:io';
 //   print("Odd numbers: $oddNumbers");
 //   print("Even numbers: $evenNumbers");
 // }
+
+//3.
+
+// void main() {
+//   List<Map<String, String>> books = [];
+//   print("Welcome to the Library Management System!");
+
+//   for (;;) {
+//     print("""
+// Choose an option:
+// 1. Add Book
+// 2. Edit Book
+// 3. Delete Book
+// 4. Get All Books
+// Enter your choice (1-4): """);
+
+//     String? input = stdin.readLineSync();
+//     int? choice = int.tryParse(input!);
+
+//     if (choice == null || choice < 1 || choice > 4) {
+//       print("Invalid choice. Please try again.");
+//       continue;
+//     }
+
+//     if (choice == 1) {
+//       // Add Book
+//       stdout.write("Enter book title: ");
+//       String title = stdin.readLineSync()!;
+//       stdout.write("Enter book author: ");
+//       String author = stdin.readLineSync()!;
+//       books.add({"title": title, "author": author});
+//       print("Book added successfully!");
+//     } else if (choice == 2) {
+//       // Edit Book
+//       if (books.isEmpty) {
+//         print("No books available to edit.");
+//         continue;
+//       }
+//       stdout.write("Enter the book number to edit: ");
+//       int? bookNumber = int.tryParse(stdin.readLineSync()!);
+//       if (bookNumber == null || bookNumber < 1 || bookNumber > books.length) {
+//         print("Invalid book number.");
+//         continue;
+//       }
+//       stdout.write("Enter new book title: ");
+//       String newTitle = stdin.readLineSync()!;
+//       stdout.write("Enter new book author: ");
+//       String newAuthor = stdin.readLineSync()!;
+//       books[bookNumber - 1] = {"title": newTitle, "author": newAuthor};
+//       print("Book updated successfully!");
+//     } else if (choice == 3) {
+//       // Delete Book
+//       if (books.isEmpty) {
+//         print("No books available to delete.");
+//         continue;
+//       }
+//       stdout.write("Enter the book number to delete: ");
+//       int? bookNumber = int.tryParse(stdin.readLineSync()!);
+//       if (bookNumber == null || bookNumber < 1 || bookNumber > books.length) {
+//         print("Invalid book number.");
+//         continue;
+//       }
+//       books.removeAt(bookNumber - 1);
+//       print("Book deleted successfully!");
+//     } else if (choice == 4) {
+//       // Get All Books
+//       if (books.isEmpty) {
+//         print("No books in the library.");
+//       } else {
+//         print("--- List of Books ---");
+//         for (int i = 0; i < books.length; i++) {
+//           print(
+//               "${i + 1}. Title: ${books[i]['title']}, Author: ${books[i]['author']}");
+//         }
+//       }
+//     }
+
+//     // Ask if the user wants to continue
+//     stdout.write("Do you want to continue? (yes/no): ");
+//     String? continueChoice = stdin.readLineSync();
+//     if (continueChoice?.toLowerCase() == "no") {
+//       print("Thank you for using the Library Management System. Goodbye!");
+//       break;
+//     }
+//   }
+// }
+
+//1.
+// void main() {
+//   int size = 9; // Define the size of the pattern
+//   int mid = size ~/ 2;
+
+//   // Upper part of the pattern
+//   for (int i = 0; i <= mid; i++) {
+//     for (int j = 0; j < size; j++) {
+//       if (i == 0 || j == i || j == size - i - 1) {
+//         stdout.write("*");
+//       } else {
+//         stdout.write(" ");
+//       }
+//     }
+//     print("");
+//   }
+
+//   // Lower part of the pattern
+//   for (int i = mid - 1; i >= 0; i--) {
+//     for (int j = 0; j < size; j++) {
+//       if (i == 0 || j == i || j == size - i - 1) {
+//         stdout.write("*");
+//       } else {
+//         stdout.write(" ");
+//       }
+//     }
+//     print("");
+//   }
+// }
